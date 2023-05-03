@@ -62,7 +62,13 @@ git clone git@github.com:chingu-voyages/v44-tier2-team-26.git
   <img width="100" height="100" alt="javascript icon" src="https://user-images.githubusercontent.com/91621041/235670461-67a167cd-85bc-4d5b-88d7-9d01af898369.png" style="margin: 0 0 1em 1em">
   <img width="100" height="100" alt="react icon" src="https://user-images.githubusercontent.com/91621041/235670582-21fe554e-e40f-4494-a831-5c8a91247cc3.png" style="margin: 0 0 1em 1em">
   <img width="100" height="100" alt="react icon" src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/Github-Dark.svg" style="margin: 0 0 1em 1em">
+  <img width="100" height="100" alt="tailwind icon" src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/TailwindCSS-Dark.svg" style="margin: 0 0 1em 1em">
+  <img width="100" height="100" alt="next.js icon" src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/NextJS-Dark.svg" style="margin: 0 0 1em 1em">
 </div>
+
+
+## Libraries
+<a href="https://github.com/tandpfun/skill-icons"><img width="100" height="50" alt="skills icon library" src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/.github/text-logo.svg" style="margin: 0"></a>
 
 
 # Live Demo
