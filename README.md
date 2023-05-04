@@ -36,9 +36,9 @@ git clone git@github.com:chingu-voyages/v44-tier2-team-26.git
 </div>
 
 <div style="display: flex; column-gap: 0.5em; align-items: center">
-<p>Keith Petryshyn</p>
-<a href="https://www.linkedin.com/in/keith-petryshyn-886b5016/" target="_blank"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/LinkedIn.svg" width="20px" height="20px"/></a>
-<a href="https://github.com/KeithPetr" target="_blank"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/Github-Dark.svg" width="20px" height="20px"/></a>
+<p>Jeffrey Li</p>
+<a href="https://www.linkedin.com/in/jeffrey-li-do/" target="_blank"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/LinkedIn.svg" width="20px" height="20px"/></a>
+<a href="https://github.com/JeffLi117" target="_blank"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/Github-Dark.svg" width="20px" height="20px"/></a>
 </div>
 
 <div style="display: flex; column-gap: 0.5em; align-items: center">
