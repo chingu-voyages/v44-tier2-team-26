@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 
 //user controls
 //drop down to select 0 or 1
@@ -6,6 +8,14 @@ import React from "react";
 //Nane yer bot unique
 
 function UserControls() {
+
+  const [inputName, setInputName] = useState("");
+  const [botName, setBotName] = useState("");
+
+  useEffect(() => {
+    console.log(botName);
+  }, [botName])
+
   return (
     <div className="px-6 pb-10 mt-[3rem] bg-white text-black rounded-md">
       <form action="" className="flex flex-col">
@@ -16,6 +26,7 @@ function UserControls() {
           className="shadow-md rounded-md border-2 border-blue-950 focus:border-blue-500 p-1"
           type="text"
           placeholder="yer bot name"
+          onChange={(e)=> {setInputName(e.target.value)}}
           required
         />
 
@@ -40,7 +51,7 @@ function UserControls() {
           <option value="East">East</option>
           <option value="West">West</option>
         </select>
-        <button className="py-2 px-1 bg-blue-950 text-white rounded-full mt-4">
+        <button className="py-2 px-1 bg-blue-950 text-white rounded-full mt-4" onClick={(e) => {e.preventDefault(); setBotName(inputName)}} >
           Create Bot
         </button>
       </form>

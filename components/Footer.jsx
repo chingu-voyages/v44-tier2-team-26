@@ -25,6 +25,7 @@ function Footer() {
         <ul>
           <li>Lee Goullaud</li>
           <li>Gillian Trethewey</li>
+          <li>Jeffrey Li</li>
         </ul>
       </div>
     </div>
