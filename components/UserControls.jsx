@@ -10,7 +10,33 @@ import React, { useState, useEffect } from "react";
 function UserControls() {
 
   const [inputName, setInputName] = useState("");
-  const [botName, setBotName] = useState("");
+  const [botName, setBotName] = useState([]);
+
+  // Setting the Bot Name 
+  const handleBotName = (e) => {
+    e.preventDefault();
+    if (e.target.value.length <= 20){
+      setInputName(e.target.value);
+      console.log(inputName);
+    } else if (e.target.value.length > 20){
+      alert ("That is a Long Bot Name")
+    }
+  }
+
+  // Create the Bot 
+  const handleCreateBot = (e) => {
+    e.preventDefault();
+    if (inputName.trim().length !== 0) {
+      const botId = `bot${botName.length + 1}`;
+      const newBot = {
+        playerID: botId,
+        name: inputName
+        // other bot info,
+      };
+      setBotName((prevData) => [...prevData, newBot]); 
+      setInputName("");
+    }
+  }
 
   useEffect(() => {
     console.log(botName);
@@ -21,22 +47,24 @@ function UserControls() {
       <form action="" className="flex flex-col">
         {/* User controls */}
         <h1 className="py-2 text-center text-xl">Bot Designer</h1>
-        <label htmlFor="botName">Name Yer Bot</label>
+        <label htmlFor="botName">Name Your Bot</label>
         <input
           className="shadow-md rounded-md border-2 border-blue-950 focus:border-blue-500 p-1"
           type="text"
-          placeholder="yer bot name"
-          onChange={(e)=> {setInputName(e.target.value)}}
+          id="botName"
+          placeholder="Name Your Bot"
+          onChange={handleBotName}
+          value={inputName}
           required
         />
 
-        <label class="relative flex justify-between items-center group p-2 ">
+        <label className="relative flex justify-between items-center group p-2 ">
           Boolean 1?
           <input
             type="checkbox"
-            class="absolute left-1/2 -translate-x-1/2 w-full h-full peer appearance-none rounded-md"
+            className="absolute left-1/2 -translate-x-1/2 w-full h-full peer appearance-none rounded-md"
           />
-          <span class="w-16 h-6 flex items-center flex-shrink-0 ml-4 p-1 bg-blue-950 rounded-full duration-300 ease-in-out peer-checked:bg-blue-400 after:w-8 after:h-8 after:bg-white after:rounded-full after:shadow-md after:duration-300 peer-checked:after:translate-x-6 group-hover:after:translate-x-1"></span>
+          <span className="w-16 h-6 flex items-center flex-shrink-0 ml-4 p-1 bg-blue-950 rounded-full duration-300 ease-in-out peer-checked:bg-blue-400 after:w-8 after:h-8 after:bg-white after:rounded-full after:shadow-md after:duration-300 peer-checked:after:translate-x-6 group-hover:after:translate-x-1"></span>
         </label>
 
         <label htmlFor="direction">Starting Direction</label>
@@ -51,7 +79,7 @@ function UserControls() {
           <option value="East">East</option>
           <option value="West">West</option>
         </select>
-        <button className="py-2 px-1 bg-blue-950 text-white rounded-full mt-4" onClick={(e) => {e.preventDefault(); setBotName(inputName)}} >
+        <button className="py-2 px-1 bg-blue-950 text-white rounded-full mt-4" onClick={handleCreateBot} >
           Create Bot
         </button>
       </form>
