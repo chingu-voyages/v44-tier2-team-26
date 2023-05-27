@@ -10,6 +10,10 @@ module.exports = {
       backgroundImage: {
         'dark': "url('../public/dark-blue-bg.jpg')",
       },
+      fontFamily: {
+        'sans': ["Montserrat", "sans-serif"],
+        'header':["Rubik", "serif"]
+      }
     },
   },
   plugins: [],
