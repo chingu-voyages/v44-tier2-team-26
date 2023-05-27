@@ -10,30 +10,9 @@ function GameControlsForm() {
   // define state for delay and logic operation
   const [selectedOperation, setSelectedOperation] = useState('')
   const [delay, setDelay] = useState(1)
-  console.log(`Logic set to ${selectedOperation}`)
-  console.log(`Slider: ${delay} seconds`)
-  // define boolean logic functions
-  // need to define bots in list or something
-  // finding that I'm actually not totally sure what the point of this is???
-  // is it to check for bot position to determine wins? like is this logic used to define how collisions happen?
   
-  const performLogic = (bot) => {
-    if (selectedOperation === 'AND') { 
-      return bot.positionX && bot.positionY
-      console.log(`&&`)
-    } else if (selectedOperation === "OR"){
-      return bot.positionX || bot.positionY
-      console.log('||')
-    } else if (selectedOperation === 'XOR'){
-      return bot.positionX !== bot.positionY
-      console.log('!==')
-    } else if (selectedOperation === "NOT"){
-      return !bot.positionX
-      console.log('!')
-    } else {
-      return false 
-      console.log(`error`)}
-  }
+ 
+
 //create function to set logic gate
 const handleLogicGate = (e) => {
   setSelectedOperation(e.target.value)
