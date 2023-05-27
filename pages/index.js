@@ -1,38 +1,20 @@
-import Arena from "@/components/Arena";
-import Footer from "@/components/Footer";
-import GameControlsForm from "@/components/GameControlsForm";
-import Scoreboard from "@/components/Scoreboard";
-import UserControls from "@/components/UserControls";
 
+import react from "react";
 import { Inter } from "next/font/google";
-
+import Link from "next/link";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
 
   return (
-    <div className="">
-      <h1 className="text-3xl text-center my-10">Welcome to our PacMan Game</h1>
-      <main className="flex flex-col mb-[5rem]">
-        <div className="flex justify-center items-center gap-[5rem]">
-          {/* aside section */}
-          <div className="flex flex-col">
-            <Scoreboard />
-            <GameControlsForm />
-          </div>
-          {/* game view */}
-          <div className="flex items-center justify-center">
-            <Arena />
-          </div>
-        </div>
-        <div className="flex gap-4 justify-center items-center">
-          <UserControls />
-          <UserControls />
-          <UserControls />
-          <UserControls />
-        </div>
-      </main>
-      <Footer />
+    <div className="flex items-center justify-center h-screen">
+     <div className="flex flex-col items-center justify-center">
+    <h1 className="text-white text-5xl text-center">Welcome to BooleBot</h1>
+   <Link href="/game">
+   <button className="bg-[#46CDD2] text-white my-5 py-2 px-4 text-xl rounded-lg hover:bg-[#4De1e7] hover:ease-in-out hover:duration-500 ease-out duration-500">Let's Play</button>
+   </Link> 
+   </div>
     </div>
+  
   );
 }
