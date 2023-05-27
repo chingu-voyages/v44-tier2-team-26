@@ -13,6 +13,7 @@ function GameControls() {
   // define boolean logic functions
   // need to define bots in list or something
   // finding that I'm actually not totally sure what the point of this is???
+  // is it to check for bot position to determine wins? like is this logic used to define how collisions happen?
   
   const performLogic = (bot) => {
     if (selectedOperation === 'AND') { 
