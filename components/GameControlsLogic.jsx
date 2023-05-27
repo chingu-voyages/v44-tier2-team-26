@@ -18,8 +18,8 @@ const GameControlsLogic = ({operation, delay}) => {
         };
     //list of bots for testing
         const bots = [
-          { input1: true, input2: false },
-          { input1: false, input2: true },
+          {input1: true, input2: false },
+          {  input2: false, input2: true },
           // Add more bots as needed
         ];
     
@@ -27,6 +27,7 @@ const GameControlsLogic = ({operation, delay}) => {
 //create bot movement logic for ALL bots
 const botMovementTimeouts = bots.map((bot, index) => {
     const { input1, input2 } = bot;
+    
     const result = performLogic(input1, input2);
 
     return setTimeout(() => {
