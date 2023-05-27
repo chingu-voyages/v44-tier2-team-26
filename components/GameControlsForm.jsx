@@ -5,11 +5,12 @@ import React, { useState } from "react";
 //logic gate will have drop down selection
 // slider to select speed (pause-length)
 
-function GameControls() {
+function GameControlsForm() {
   // define state for delay and logic operation
-  const [selectedOperation, setSelectedOperation] = useState('AND')
+  const [selectedOperation, setSelectedOperation] = useState('')
   const [delay, setDelay] = useState(1)
-
+  console.log(`Logic set to ${selectedOperation}`)
+  console.log(`Slider: ${delay} seconds`)
   // define boolean logic functions
   // need to define bots in list or something
   // finding that I'm actually not totally sure what the point of this is???
@@ -18,19 +19,31 @@ function GameControls() {
   const performLogic = (bot) => {
     if (selectedOperation === 'AND') { 
       return bot.positionX && bot.positionY
+      console.log(`&&`)
     } else if (selectedOperation === "OR"){
       return bot.positionX || bot.positionY
+      console.log('||')
     } else if (selectedOperation === 'XOR'){
       return bot.positionX !== bot.positionY
+      console.log('!==')
     } else if (selectedOperation === "NOT"){
       return !bot.positionX
-    } else {return false}
+      console.log('!')
+    } else {
+      return false 
+      console.log(`error`)}
   }
-
+//create function to set logic gate
+const handleLogicGate = (e) => {
+  setSelectedOperation(e.target.value)
+  
+}
   //create function to set slider
   const handleSliderChange = (e) => {
     setDelay(Number(e.target.value))
+    
   }
+
   return (
     <div className="px-6 pb-10 mt-[3rem] bg-white text-black rounded-md">
       <div>
@@ -55,20 +68,22 @@ function GameControls() {
           <select
             required
             value ={selectedOperation}
-            onChange={(e) => setSelectedOperation(e.target.value)}
+            onChange={handleLogicGate}
             name="logic-gate"
             id="logic-gate"
             className="shadow-md rounded-md border-2 border-blue-950 focus:border-blue-500 p-1"
           >
+            <option value="">-- Select --</option>
             <option value="AND">AND</option>
             <option value="OR">OR</option>
             <option value="XOR">XOR</option>
             <option value="NOT">NOT</option>
           </select>
+        
         </form>
       </div>
     </div>
   );
 }
 
-export default GameControls;
+export default GameControlsForm;
