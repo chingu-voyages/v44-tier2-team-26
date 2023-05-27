@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import GameControlsLogic from "./GameControlsLogic";
 
 // game controls
 // logic gate (AND/OR/blahblah)
@@ -79,7 +80,7 @@ const handleLogicGate = (e) => {
             <option value="XOR">XOR</option>
             <option value="NOT">NOT</option>
           </select>
-        
+        {selectedOperation && <GameControlsLogic operation = {selectedOperation}/>}
         </form>
       </div>
     </div>
