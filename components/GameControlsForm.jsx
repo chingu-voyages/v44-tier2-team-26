@@ -21,14 +21,14 @@ const handleLogicGate = (e) => {
   }
 
   return (
-    <div className="px-6 pb-10 mt-[3rem] bg-white text-black rounded-md">
+    <div className="px-6 pb-10 mt-[3rem] bg-[#08001A] text-white rounded-md shadow-lg">
       <div>
-        <h1 className="py-2 text-center text-xl">Game Controls</h1>
+        <h1 className="py-2 text-center text-2xl font-semibold">Game Controls</h1>
         <form action="#" className="flex flex-col">
           {/* speed slider set default? */}
           <label htmlFor="delay">Select Speed(in seconds)</label>
           <input
-            className="accent-blue-950"
+            className="accent-[#4De1e7] mt-1"
             required
             type="range"
             name="delay"
@@ -40,14 +40,14 @@ const handleLogicGate = (e) => {
             onChange={handleSliderChange}
           />
           {/* logic gate */}
-          <label htmlFor="logic-gate">Select Logic</label>
+          <label htmlFor="logic-gate" className="mt-2">Select Logic</label>
           <select
             required
             value ={selectedOperation}
             onChange={handleLogicGate}
             name="logic-gate"
             id="logic-gate"
-            className="shadow-md rounded-md border-2 border-blue-950 focus:border-blue-500 p-1"
+            className="mt-1 rounded-md text-black border-2 focus:border-[#4De1e7] p-1"
           >
             <option value="">-- Select --</option>
             <option value="AND">AND</option>
