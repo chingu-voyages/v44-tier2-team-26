@@ -35,7 +35,7 @@ function Footer() {
       </div>
       <div className="w-[30%] text-center">
         <ul>
-          <li>Lee Goullaud - Lead Full Stack Developer</li>
+          <li>Lee Goullaud - Full Stack Developer</li>
           <li className="flex items-center justify-around">
             <div className="flex">
               <Link href='http://www.leegoullaud.com/' target="_blank">Portfolio</Link> 
