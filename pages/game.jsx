@@ -7,8 +7,8 @@ import UserControls from "@/components/UserControls";
 import ChinguOde from '@/components/ChinguOde';
 function game() {
   return (
-       <div className='py-4'>
-      <main className="flex flex-col mb-[5rem]">
+       <div className=''>
+      <main className="flex flex-col my-5">
         <ChinguOde/>
         <div className="flex justify-center items-center gap-[5rem]">
           {/* aside section */}
