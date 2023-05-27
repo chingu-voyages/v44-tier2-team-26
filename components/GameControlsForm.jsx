@@ -9,19 +9,15 @@ import GameControlsLogic from "./GameControlsLogic";
 function GameControlsForm() {
   // define state for delay and logic operation
   const [selectedOperation, setSelectedOperation] = useState('')
-  const [delay, setDelay] = useState(1)
-  
- 
+  const [delay, setDelay] = useState(0)
 
 //create function to set logic gate
 const handleLogicGate = (e) => {
   setSelectedOperation(e.target.value)
-  
 }
   //create function to set slider
   const handleSliderChange = (e) => {
-    setDelay(Number(e.target.value))
-    
+    setDelay(parseInt(e.target.value, 5))
   }
 
   return (
@@ -30,14 +26,14 @@ const handleLogicGate = (e) => {
         <h1 className="py-2 text-center text-xl">Game Controls</h1>
         <form action="#" className="flex flex-col">
           {/* speed slider set default? */}
-          <label htmlFor="speed">Select Speed(in seconds)</label>
+          <label htmlFor="delay">Select Speed(in seconds)</label>
           <input
             className="accent-blue-950"
             required
             type="range"
-            name="speed"
-            id="speed"
-            min={1}
+            name="delay"
+            id="delay"
+            min={0}
             max={5}
             step={1}
             value={delay}
@@ -59,7 +55,7 @@ const handleLogicGate = (e) => {
             <option value="XOR">XOR</option>
             <option value="NOT">NOT</option>
           </select>
-        {selectedOperation && <GameControlsLogic operation = {selectedOperation}/>}
+        {selectedOperation && <GameControlsLogic delay={delay} operation = {selectedOperation}/>}
         </form>
       </div>
     </div>
