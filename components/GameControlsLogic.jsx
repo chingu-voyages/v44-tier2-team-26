@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-const GameControlsLogic = ({operation}) => {
+const GameControlsLogic = ({operation, delay}) => {
     const performLogic = (input1, input2) => {
         switch (operation) {
           case 'AND':
@@ -21,7 +21,26 @@ const GameControlsLogic = ({operation}) => {
 
   const result = performLogic(input1, input2);
 
-  return console.log(`Result: ${String(result)}`)}
+ 
+
+//create bot movement logic
+useEffect(() => {
+    const botMovementTimeout = setTimeout(() => {
+      // Simulate bot movement
+      //replace with actual bot movement logic
+      console.log('Bot moved!');
+    }, delay * 1000);
+
+    return () => {
+      clearTimeout(botMovementTimeout)
+    };
+  }, [delay]);
+
+
+ //check console log output
+ return console.log(`Result: ${String(result)}`)
+
+}
 
 
 export default GameControlsLogic;
