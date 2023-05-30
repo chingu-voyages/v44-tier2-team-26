@@ -41,6 +41,7 @@ function UserControls( { handleAddBot } ) {
         setInputName("");
         setCheckboxValue(false);
         setBotDirection("North")
+        // disable the create bot button after creating the bot with the button
       }
     }
   }
