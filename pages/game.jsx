@@ -27,6 +27,7 @@ function game() {
           <UserControls />
           <UserControls />
         </div>
+        <button className="bg-[#46CDD2] text-white my-5 py-2 m-auto flex justify-center items-center px-4 text-xl rounded-full hover:bg-[#4De1e7] hover:ease-in-out hover:duration-500 ease-out duration-500" onClick={(e) => {e.preventDefault(); console.log("Battle start!")}}>Battle!</button>
       </main>
       <Footer />
     </div>
