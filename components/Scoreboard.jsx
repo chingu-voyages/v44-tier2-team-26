@@ -1,45 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 
 //create Battle! and Stop! Button functionality
+//pass in bots list from game page
+export default function Scoreboard({ bots }) {
+  // set the state for the score
+  const [scores, setScores] = useState({})
 
-export default function Scoreboard() {
+
+  //to increment the scores, we can log collision results to bot list
+  // the we pull bot list to leaderboard comp and use to add/subtract from score
+
+  const handleCollision = (botId, isWin) => {
+    setScores(prevScores => ({
+      ...prevScores,
+      [botId]: prevScores[botId] + (isWin ? 1 : -1) || (isWin ? 1 : -1),
+    }))
+  }
+  //pass in bot and map over each bot to create leaderboard 
   return (
     <div className="flex flex-col justify-center items-center bg-white rounded-md text-black p-4">
-      <h1 className="py-2 text-center text-2xl">Scoreboard</h1>
-
-      <div className="flex gap-6">
-        <div className="flex flex-col p-2 items-center">
-          <div>
-            <h2 className="p-2">BotName</h2>
-            <p className="p-2 bg-white border-2 border-blue-950 text-black rounded-lg shadow-lg text-2xl font-bold text-center">
-              0
-            </p>
+      <h2 className="py-2 text-center text-2xl font-bold">Leaderboard</h2>
+      <div className="flex gap-6 border-t-2 border-t-black w-full">
+        bots.map(bot = (
+          <div key={bot.id}>
+          <div className="w-1/2 border-r-2 border-r-black">
+            <h3>
+            {bot.name}
+            </h3>
+            </div>
+        <div><p>
+          {scores[bot.id] || 0}</p></div>
           </div>
-          <div>
-            <h2 className="p-2">BotName</h2>
-            <p className="p-2 bg-white border-2 border-blue-950 text-black rounded-lg shadow-lg text-2xl font-bold text-center">
-              {" "}
-              0{" "}
-            </p>
-          </div>
-        </div>
-        <div className="justify-center items-center flex">
-          <h2 className="text-[2rem]">VS</h2>
-        </div>
-        <div className="flex flex-col p-2 items-center">
-          <div>
-            <h2 className="p-2">BotName</h2>
-            <p className="p-2 bg-white border-2 border-blue-950 text-black rounded-lg shadow-lg text-2xl font-bold text-center">
-              0
-            </p>
-          </div>
-          <div>
-            <h2 className="p-2">BotName</h2>
-            <p className="p-2 bg-white border-2 border-blue-950 text-black rounded-lg shadow-lg text-2xl font-bold text-center">
-              0
-            </p>
-          </div>
-        </div>
+       
+       
+        ))
+        
+        
       </div>
     </div>
   );
