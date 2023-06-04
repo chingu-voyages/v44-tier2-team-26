@@ -33,7 +33,6 @@ function game() {
 
   return (
     <div className="">
-      <h1 className="text-3xl text-center my-10">Welcome to our PacMan Game</h1>
       <main className="flex flex-col my-5">
         <ChinguOde/>
         <div className="flex justify-center items-center gap-[5rem]">
