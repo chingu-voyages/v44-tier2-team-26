@@ -57,7 +57,7 @@ function UserControls( { handleAddBot } ) {
         <h1 className="py-2 text-center text-xl">Bot Designer</h1>
         <label htmlFor="botName">Name Your Bot</label>
         <input
-          className="shadow-md rounded-md border-2 border-[#00104B] focus:border-[#4De1e7] p-1"
+          className="shadow-md rounded-md border-2 border-[#00104B] focus:border-[#4De1e7] p-1 text-black"
           type="text"
 
           id="botName"
@@ -93,7 +93,7 @@ function UserControls( { handleAddBot } ) {
           <option value="East">East</option>
           <option value="West">West</option>
         </select>
-        <button className="bg-[#46CDD2] text-white my-5 py-2 px-4 text-xl rounded-full hover:bg-[#4De1e7] hover:ease-in-out hover:duration-500 ease-out duration-500" onClick={(e) => {e.preventDefault(); setBotName(inputName)}} >
+        <button className="bg-[#46CDD2] text-white my-5 py-2 px-4 text-xl rounded-full hover:bg-[#4De1e7] hover:ease-in-out hover:duration-500 ease-out duration-500" onClick={(e) => {e.preventDefault(); setInputName(inputName)}} >
 
           Create Bot
         </button>
