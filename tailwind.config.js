@@ -8,10 +8,12 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        'dark': "url('../public/dark-blue-bg.jpg')",
       },
+      fontFamily: {
+        'sans': ["Montserrat", "sans-serif"],
+        'header':["Rubik", "serif"]
+      }
     },
   },
   plugins: [],

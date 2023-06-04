@@ -1,64 +1,23 @@
-import Arena from "@/components/Arena";
-import Footer from "@/components/Footer";
-import GameControls from "@/components/GameControls";
-import Scoreboard from "@/components/Scoreboard";
-import UserControls from "@/components/UserControls";
 
-import { Inter } from "next/font/google";
-import { useEffect, useState } from "react";
 
-const inter = Inter({ subsets: ["latin"] });
+import react from "react";
+
+import Link from "next/link";
+
+
 
 export default function Home() {
 
-  const [bots, setBots] = useState([]);
-
-  const handleAddBot = (bot) => {
-    const botExists = bots.some((existingBot) => existingBot.name === bot.name);
-    if (botExists) {
-      return true; // Bot name already exists
-    } else {
-      setBots((prevBots) => [...prevBots, bot]);
-      alert(`${bot.name} has been added to the game`)
-      return false; // Bot name is unique
-    }
-    console.log(bots)
-  };
-
-  const handleBotDisplay = (e) => {
-    e.preventDefault();
-    setBots([])
-  }
-
-  useEffect(() => {
-    console.log(bots);
-  }, [bots]);
-
   return (
-    <div className="">
-      <h1 className="text-3xl text-center my-10">Welcome to our PacMan Game</h1>
-      <main className="flex flex-col mb-[5rem]">
-        <div className="flex justify-center items-center gap-[5rem]">
-          {/* aside section */}
-          <div className="flex flex-col">
-            <Scoreboard />
-            <GameControls />
-          </div>
-          {/* game view */}
-          <div className="flex items-center justify-center">
-            <Arena />
-          </div>
-        </div>
-        <div className="flex gap-4 justify-center items-center">
-          <UserControls handleAddBot = { handleAddBot } />
-          <UserControls handleAddBot = { handleAddBot } />
-          <UserControls handleAddBot = { handleAddBot } />
-          <UserControls handleAddBot = { handleAddBot } />
-        </div>
+    <div className="flex items-center justify-center h-screen">
+     <div className="flex flex-col items-center justify-center">
+    <h1 className="font-header font-bold text-white text-5xl text-center">Welcome to BooleBot</h1>
+   <Link href="/game">
+   <button className="bg-[#46CDD2] text-white my-5 py-2 px-4 text-xl rounded-lg hover:bg-[#4De1e7] hover:ease-in-out hover:duration-500 ease-out duration-500">Let's Play</button>
+   </Link> 
+   </div>
 
-        <button className="py-2 px-1 bg-blue-950 text-white rounded-full mt-4" onClick={ handleBotDisplay }> Add Bots </button>
-      </main>
-      <Footer />
     </div>
+  
   );
 }
