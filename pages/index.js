@@ -1,7 +1,9 @@
 
+
 import react from "react";
 
 import Link from "next/link";
+
 
 
 export default function Home() {
@@ -14,6 +16,7 @@ export default function Home() {
    <button className="bg-[#46CDD2] text-white my-5 py-2 px-4 text-xl rounded-lg hover:bg-[#4De1e7] hover:ease-in-out hover:duration-500 ease-out duration-500">Let's Play</button>
    </Link> 
    </div>
+
     </div>
   
   );
