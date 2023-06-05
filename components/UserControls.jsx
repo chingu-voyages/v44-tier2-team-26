@@ -93,7 +93,7 @@ function UserControls( { handleAddBot } ) {
           <option value="East">East</option>
           <option value="West">West</option>
         </select>
-        <button className="bg-[#46CDD2] text-white my-5 py-2 px-4 text-xl rounded-full hover:bg-[#4De1e7] hover:ease-in-out hover:duration-500 ease-out duration-500" onClick={(e) => {e.preventDefault(); setInputName(inputName)}} >
+        <button className="bg-[#46CDD2] text-white my-5 py-2 px-4 text-xl rounded-full hover:bg-[#4De1e7] hover:ease-in-out hover:duration-500 ease-out duration-500" onClick={handleCreateBot} >
 
           Create Bot
         </button>
