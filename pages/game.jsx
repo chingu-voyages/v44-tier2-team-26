@@ -8,6 +8,22 @@ import UserControls from "@/components/UserControls";
 import ChinguOde from '@/components/ChinguOde';
 
 function game() {
+
+  const [started, setStarted] = useState(false);
+
+ const battleStart = (e) => {
+    e.preventDefault(); 
+    setStarted(true); 
+    console.log("Battle start!")
+  }
+
+  const battleStop = (e) => {
+    e.preventDefault(); 
+    setStarted(false); 
+    console.log("Stop battle!")
+  }
+
+
   const [bots, setBots] = useState([]);
 
   const handleAddBot = (bot) => {
@@ -53,7 +69,10 @@ function game() {
           <UserControls handleAddBot = { handleAddBot } />
         </div>
 
-        <button className="py-2 px-1 bg-blue-950 text-white rounded-full mt-4" onClick={ handleBotDisplay }> Add Bots </button>
+        {started ? (<button className="bg-[#46CDD2] text-white my-5 py-2 m-auto flex justify-center items-center px-4 text-xl rounded-full hover:bg-[#4De1e7] hover:ease-in-out hover:duration-500 ease-out duration-500" onClick={battleStop}>Stop!</button>) 
+        : (<button className="bg-[#46CDD2] text-white my-5 py-2 m-auto flex justify-center items-center px-4 text-xl rounded-full hover:bg-[#4De1e7] hover:ease-in-out hover:duration-500 ease-out duration-500" onClick={battleStart}>Battle!</button>)}
+        
+
       </main>
       <Footer />
       </div>
