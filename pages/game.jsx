@@ -8,6 +8,18 @@ import ChinguOde from '@/components/ChinguOde';
 function game() {
   const [started, setStarted] = useState(false);
 
+  function battleStart(e) {
+    e.preventDefault(); 
+    setStarted(true); 
+    console.log("Battle start!")
+  }
+
+  function battleStop(e) {
+    e.preventDefault(); 
+    setStarted(false); 
+    console.log("Stop battle!")
+  }
+
   return (
        <div className=''>
       <main className="flex flex-col my-5">
@@ -29,8 +41,8 @@ function game() {
           <UserControls />
           <UserControls />
         </div>
-        {started ? (<button className="bg-[#46CDD2] text-white my-5 py-2 m-auto flex justify-center items-center px-4 text-xl rounded-full hover:bg-[#4De1e7] hover:ease-in-out hover:duration-500 ease-out duration-500" onClick={(e) => {e.preventDefault(); setStarted(false); console.log("Stop battle!")}}>Stop!</button>) 
-        : (<button className="bg-[#46CDD2] text-white my-5 py-2 m-auto flex justify-center items-center px-4 text-xl rounded-full hover:bg-[#4De1e7] hover:ease-in-out hover:duration-500 ease-out duration-500" onClick={(e) => {e.preventDefault(); setStarted(true); console.log("Battle start!")}}>Battle!</button>)}
+        {started ? (<button className="bg-[#46CDD2] text-white my-5 py-2 m-auto flex justify-center items-center px-4 text-xl rounded-full hover:bg-[#4De1e7] hover:ease-in-out hover:duration-500 ease-out duration-500" onClick={(e) => battleStop(e)}>Stop!</button>) 
+        : (<button className="bg-[#46CDD2] text-white my-5 py-2 m-auto flex justify-center items-center px-4 text-xl rounded-full hover:bg-[#4De1e7] hover:ease-in-out hover:duration-500 ease-out duration-500" onClick={(e) => battleStart(e)}>Battle!</button>)}
         
       </main>
       <Footer />
