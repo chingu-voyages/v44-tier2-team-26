@@ -56,7 +56,10 @@ function game() {
             <GameControlsForm />
           </div>
           {/* game view */}
-          <div className="flex items-center justify-center">
+          <div className="flex flex-col items-center justify-center">
+          {started ? (<button className="bg-[#46CDD2] text-white my-5 py-2 m-auto flex justify-center items-center px-4 text-xl rounded-full hover:bg-[#4De1e7] hover:ease-in-out hover:duration-500 ease-out duration-500" onClick={battleStop}>Stop!</button>) 
+        : (<button className="bg-[#46CDD2] text-white my-5 py-2 m-auto flex justify-center items-center px-4 text-xl rounded-full hover:bg-[#4De1e7] hover:ease-in-out hover:duration-500 ease-out duration-500" onClick={battleStart}>Battle!</button>)}
+        
             <Arena />
           </div>
         </div>
@@ -67,9 +70,7 @@ function game() {
           <UserControls handleAddBot = { handleAddBot } />
         </div>
 
-        {started ? (<button className="bg-[#46CDD2] text-white my-5 py-2 m-auto flex justify-center items-center px-4 text-xl rounded-full hover:bg-[#4De1e7] hover:ease-in-out hover:duration-500 ease-out duration-500" onClick={battleStop}>Stop!</button>) 
-        : (<button className="bg-[#46CDD2] text-white my-5 py-2 m-auto flex justify-center items-center px-4 text-xl rounded-full hover:bg-[#4De1e7] hover:ease-in-out hover:duration-500 ease-out duration-500" onClick={battleStart}>Battle!</button>)}
-        
+       
 
       </main>
       <Footer />
