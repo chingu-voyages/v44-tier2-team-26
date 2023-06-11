@@ -5,7 +5,6 @@ import Footer from "@/components/Footer";
 import GameControlsForm from "@/components/GameControlsForm";
 import Scoreboard from "@/components/Scoreboard";
 import UserControls from "@/components/UserControls";
-import ChinguOde from '@/components/ChinguOde';
 
 function game() {
 
@@ -50,7 +49,6 @@ function game() {
   return (
     <div className="">
       <main className="flex flex-col my-5">
-        <ChinguOde/>
         <div className="flex justify-center items-center gap-[5rem]">
           {/* aside section */}
           <div className="flex flex-col">
