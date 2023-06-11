@@ -4,7 +4,8 @@ import {AiOutlineLinkedin, AiOutlineGithub} from 'react-icons/ai'
 //team
 function Footer() {
   return (
-    <div className="text-white flex justify-around items-center bg-[#08001A] py-4">
+    <div className="flex flex-col bg-[#08001A] py-4">
+    <div className="text-white flex justify-around items-center ">
       <div className="w-[30%] text-center">
         <ul>
           <li>Rana Selva - Front End Developer</li>
@@ -47,7 +48,21 @@ function Footer() {
           </li>           
         </ul>
       </div>
+      
     </div>
+     <div className="flex justify-center text-white w-[100%]">
+     <ul>
+       <Link
+         href="https://github.com/chingu-voyages/v44-tier2-team-26"
+         target="_blank"
+       >
+         <li className='flex justify-center mt-2'>Check out our code! <AiOutlineGithub className='text-xl mx-2'/></li>
+       </Link>
+       <li className='mx-2 text-sm text-center mt-2'>
+Chingu is a collaborative learning platform that brings together front end developers from around the world to work on real-world projects and enhance their skills through teamwork and mentorship.</li>
+     </ul>
+   </div>
+   </div>
   );
 }
 
